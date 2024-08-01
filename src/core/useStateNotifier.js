@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useStateNotifier = notifier => {
+const useStateNotifier = notifier => {
   const [state, setState] = useState(notifier.getState());
 
   useEffect(() => {

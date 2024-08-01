@@ -1,5 +1,5 @@
 export { StateNotifier, PersistenceLayer } from './core/StateNotifier';
-export { useStateNotifier } from './core/useStateNotifier';
+export { default as useStateNotifier } from './core/useStateNotifier';
 export { useQuery } from './core/useQuery';
 export { useMutation } from './core/useMutation';
 export { useStreamQuery } from './core/useStreamQuery';
