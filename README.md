@@ -1,7 +1,7 @@
 
 # CaglarPod
 
-CaglarPod inpired from Riverpod packge in Flutter Framework. Caglar means 'runs' or 'flows' in Turkish. CaglarPod is a state management library for React applications that provides a simple and powerful way to manage state, perform queries, handle real-time data streams, and derive state. It is designed to work seamlessly with TypeScript and JavaScript.
+CaglarPod inspired from Riverpod packge in Flutter Framework. Caglar means 'runs' or 'flows' in Turkish. CaglarPod is a state management library for React applications that provides a simple and powerful way to manage state, perform queries, handle real-time data streams, and derive state. It is designed to work seamlessly with TypeScript and JavaScript.
 
 
 ## Getting Started
@@ -13,7 +13,7 @@ CaglarPod inpired from Riverpod packge in Flutter Framework. Caglar means 'runs'
 **Example: CounterNotifier**
 
 ```typescript
-import { StateNotifier } from 'caglarpod';
+import { StateNotifier } from 'caglarpod/src/core/StateNotifier';
 
 interface CounterState {
   count: number;
@@ -44,7 +44,7 @@ export default new CounterNotifier();
 
 ```tsx
 import React from 'react';
-import { ProviderScope } from 'caglarpod';
+import { ProviderScope } from 'caglarpod/src/core/ProviderScope';
 import CounterComponent from './CounterComponent';
 
 const App: React.FC = () => (
@@ -67,7 +67,7 @@ export default App;
 
 ```tsx
 import React from 'react';
-import { useStateNotifier } from 'caglarpod';
+import { useStateNotifier } from 'caglarpod/src/core/useStateNotifier';
 import counterNotifier from './counterNotifier';
 
 const CounterComponent: React.FC = () => {
@@ -109,7 +109,7 @@ export const fetchUsers = async (): Promise<User[]> => {
 
 ```tsx
 import React from 'react';
-import { useQuery } from 'caglarpod';
+import { useQuery } from 'caglarpod/src/core/useQuery';
 import { fetchUsers } from './api';
 
 const UsersComponent: React.FC = () => {
@@ -164,7 +164,7 @@ export const createSimpleObservable = (): Observable<{ count: number }> => {
 
 ```tsx
 import React from 'react';
-import { useStreamQuery } from 'caglarpod';
+import { useStreamQuery } from 'caglarpod/src/core/useStreamQuery';
 import { createSimpleObservable } from './simpleStream';
 
 const simpleObservable = createSimpleObservable();
@@ -194,7 +194,7 @@ Derived state allows you to compute new state based on existing state.
 **itemNotifier.ts**
 
 ```typescript
-import { StateNotifier } from 'caglarpod';
+import { StateNotifier } from 'caglarpod/src/core/StateNotifier';
 
 interface Item {
   id: number;
@@ -233,7 +233,7 @@ export default new ItemNotifier();
 
 ```tsx
 import React, { useState } from 'react';
-import { useStateNotifier, useStateSelector } from 'caglarpod';
+import { useStateNotifier, useStateSelector } from 'caglarpod/src/core/useStateSelector';
 import itemNotifier from './itemNotifier';
 
 const ItemListComponent: React.FC = () => {
